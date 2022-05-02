@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0f73a6ca613d4d8a3d28383f69ae335c9ffd6d06',
+    'reference' => '5d07fdeaf31453d0b2c5c04b539fa805becb665b',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0f73a6ca613d4d8a3d28383f69ae335c9ffd6d06',
+      'reference' => '5d07fdeaf31453d0b2c5c04b539fa805becb665b',
     ),
     'doctrine/instantiator' => 
     array (
@@ -343,6 +343,15 @@
       array (
       ),
       'reference' => '4407588e0d3f1f52efb65fbe92babe41f37fe50c',
+    ),
+    'symfony/routing' => 
+    array (
+      'pretty_version' => 'v5.4.8',
+      'version' => '5.4.8.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e07817bb6244ea33ef5ad31abc4a9288bef3f2f7',
     ),
     'theseer/tokenizer' => 
     array (
