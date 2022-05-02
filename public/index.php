@@ -13,8 +13,6 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $request = Request::createFromGlobals();
 
-$response = new Response();
-
 $routes = require __DIR__ . '/../src/routes.php';
 
 
@@ -24,20 +22,18 @@ $context->fromRequest($request);
 
 $urlMatcher = new UrlMatcher($routes, $context);
 
-$pathInfo = $request->getPathInfo();
-
 try {
-    extract($urlMatcher->match($pathInfo));
+    extract($urlMatcher->match($request->getPathInfo()));
 
 
     ob_start();
     include __DIR__ . '/../src/pages/' . $_route . '.php';
-    $response->setContent(ob_get_clean());
+    $response = new Response(ob_get_clean());
 } catch (ResourceNotFoundException $e) {
-    $response->setContent("La page demandée n'existe pas");
-    $response->setStatusCode(404);
+    $response = new Response("La page demandée n'existe pas", 404);
+} catch (Exception $e) {
+    $response = new Response("Une erreur est survenue", 500);
 }
-$resultat = $urlMatcher->match($pathInfo);
 
 
 
