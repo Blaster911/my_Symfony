@@ -1,6 +1,1 @@
-<?php
-
-$name = $request->query->get('name', 'World');
-?>
-
-Hello <?php echo htmlspecialchars($name, ENT_QUOTES); ?>
+Hello <?php echo htmlspecialchars(isset($name) ? $name : 'World', ENT_QUOTES); ?>
